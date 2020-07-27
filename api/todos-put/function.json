@@ -5,7 +5,8 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "route": "signin"
+      "methods": ["put"],
+      "route": "todo"
     },
     {
       "type": "http",

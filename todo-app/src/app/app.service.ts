@@ -11,20 +11,20 @@ export class AppService {
   rootURL = '/api';
 
   getTasks() {
-    return this.http.get(this.rootURL + '/tasks');
+    return this.http.get(this.rootURL + '/todos');
   }
 
   addTask(task: any) {
-    return this.http.post(this.rootURL + '/task', {task});
+    return this.http.post(this.rootURL + '/todos', {task});
   }
 
   editTask(task: any) {
-    return this.http.put(this.rootURL + '/task', {task});
+    return this.http.put(this.rootURL + '/todo', {task});
   }
 
   deleteTask(taskId: any) {
     console.log('deleting task:::', taskId);
-    return this.http.delete(`${this.rootURL}/task/${taskId}`);
+    return this.http.delete(`${this.rootURL}/todo/${taskId}`);
   }
 
 }
