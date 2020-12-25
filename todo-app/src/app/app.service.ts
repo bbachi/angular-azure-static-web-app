@@ -27,4 +27,8 @@ export class AppService {
     return this.http.delete(`${this.rootURL}/todo/${taskId}`);
   }
 
+  getSettings(url: string) {
+    return this.http.get(this.rootURL + '/' + url);
+  }
+
 }

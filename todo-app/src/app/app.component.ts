@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AppService } from './app.service';
+import { AppConfigService } from './appconfig.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
@@ -11,7 +12,7 @@ import { Subject } from 'rxjs';
 })
 export class AppComponent implements OnInit,  OnDestroy {
 
-  constructor(private appService: AppService) {}
+  constructor(private appService: AppService, private appConfigService: AppConfigService) {}
 
   title = 'angular-nodejs-example';
 
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit,  OnDestroy {
   });
 
   tasks: any[] = [];
+  settings: any;
 
   destroy$: Subject<boolean> = new Subject<boolean>();
 
@@ -56,8 +58,13 @@ export class AppComponent implements OnInit,  OnDestroy {
     });
   }
 
+  getAppSettings() {
+    this.settings = this.appConfigService.settings;
+  }
+
   ngOnInit() {
     this.getTasks();
+    this.getAppSettings();
   }
 
   ngOnDestroy() {

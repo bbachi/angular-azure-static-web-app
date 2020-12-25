@@ -10,6 +10,10 @@ import { HeaderComponent } from './header/header.component';
 import { TasksComponent } from './tasks.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
+import { AppConfigModule } from './appconfig.module';
+
+import { AppConfigService } from './appconfig.service';
+
 
 @NgModule({
   declarations: [
@@ -23,9 +27,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    // app comfiguration module
+    AppConfigModule
   ],
-  providers: [],
+  providers: [ AppConfigService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
