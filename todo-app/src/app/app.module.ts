@@ -13,13 +13,17 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppConfigModule } from './appconfig.module';
 
 import { AppConfigService } from './appconfig.service';
+import { DetailComponent } from './detail/detail.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    TasksComponent
+    TasksComponent,
+    DetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

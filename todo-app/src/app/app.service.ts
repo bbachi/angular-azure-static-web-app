@@ -9,6 +9,15 @@ export class AppService {
   constructor(private http: HttpClient) { }
 
   rootURL = '/api';
+  task: any;
+
+  setTask(task) {
+    this.task = task;
+  }
+
+  getTask() {
+    return this.task;
+  }
 
   getTasks() {
     return this.http.get(this.rootURL + '/todos');

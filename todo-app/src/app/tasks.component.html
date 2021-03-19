@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let task of tasks; let i = index">
+      <tr (click)="gotoDetail(task)" *ngFor="let task of tasks; let i = index">
         <td>
           {{task.id}}
         </td>

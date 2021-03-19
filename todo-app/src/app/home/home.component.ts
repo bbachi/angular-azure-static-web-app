@@ -1,16 +1,16 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AppService } from './app.service';
-import { AppConfigService } from './appconfig.service';
+import { AppService } from '../app.service';
+import { AppConfigService } from '../appconfig.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent implements OnInit,  OnDestroy {
+export class HomeComponent implements OnInit {
 
   constructor(private appService: AppService,
     private appConfigService: AppConfigService) {}
